@@ -1,21 +1,33 @@
-import Logo from '../assets/Asset 16@4x.png'
+import React, { useState } from "react";
+import Logo from '../images/littlelemon_logo.png';
+const Nav = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-function Nav() {
-    return (
-      <nav className="navbar">
-        <a href="/">
-     <img src={Logo} className="main-logo"/>
-         </a>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Menu</a></li>
-        <li><a href="#">Reservations</a></li>
-        <li><a href="#">Order online</a></li>
-        <li><a href="#">Login</a></li>
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  return (
+    <nav className={`navbar ${menuOpen ? "open" : ""}`}>
+      <a href="/" className="Logo">
+        <img src={Logo} alt="" />
+      </a>
+      <div className="menu-icon" onClick={toggleMenu}>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+      <ul className={`nav-links ${menuOpen ? "visible" : ""}`}>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">About</a></li>
+        <li><a href="/">Services</a></li>
+        <li><a href="/">Menu</a></li>
+        <li><a href="/">Reservations</a></li>
+        <li><a href="/booking">Order Online</a></li>
+        <li><a href="/">Login</a></li>
       </ul>
-      </nav>
-    );
-  }
+    </nav>
+  );
+};
 
-  export default Nav;
+export default Nav;

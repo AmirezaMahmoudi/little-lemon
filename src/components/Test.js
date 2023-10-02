@@ -1,6 +1,6 @@
-import Abdol from '../assets/Abdool.jpeg'
-import Jose from  '../assets/Jose.jpeg'
-import Aaron from  '../assets/Aaron.jpeg'
+import Abdol from '../images/Abdool.jpeg'
+import Jose from  '../images/Jose.jpeg'
+import Aaron from  '../images/Aaron.jpeg'
 
 import React  from 'react';
 const Test = () => {
